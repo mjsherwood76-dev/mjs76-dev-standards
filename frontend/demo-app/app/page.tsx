@@ -26,6 +26,7 @@ const THEME_OPTIONS = [
   { value: 'nexus', label: 'Nexus', description: 'Modern gaming and esports theme with vibrant purples and dynamic energy.' },
   { value: 'ember', label: 'Ember', description: 'Warm culinary design with appetizing reds and golden accents.' },
   { value: 'prism', label: 'Prism', description: 'Bold creative agency theme with gradient effects and experimental typography.' },
+  { value: 'verdant', label: 'Verdant', description: 'Pacific Northwest forest green with natural, wilderness-inspired design.' },
 ] as const;
 
 const DENSITY_OPTIONS = [
@@ -84,7 +85,7 @@ export default function Page() {
           <h1>Developer Standards Showcase</h1>
           <p>
             Explore the canonical theme tokens from <code>design/ui-standards.md</code> and preview how buttons, cards, forms, tables, and alerts respond to
-            light/dark mode, 17 comprehensive themes, and comfort vs. compact density.
+            light/dark mode, 18 comprehensive themes, and comfort vs. compact density.
           </p>
           <details style={{ marginTop: '1rem', padding: '1rem', background: 'hsl(var(--muted))', borderRadius: 'var(--card-radius)' }}>
             <summary style={{ cursor: 'pointer', fontWeight: 600, marginBottom: '0.5rem' }}>Implementation Guide</summary>
@@ -95,7 +96,7 @@ export default function Page() {
                 <li style={{ marginBottom: '0.5rem' }}><strong>Copy the CSS:</strong> Import <code>globals.css</code> from this demo into your project</li>
                 <li style={{ marginBottom: '0.5rem' }}><strong>Add Theme Switcher:</strong> Use <code>document.documentElement.dataset.theme = 'theme-name'</code> to switch themes</li>
                 <li style={{ marginBottom: '0.5rem' }}><strong>Store Preferences:</strong> Save user theme selection to localStorage or database</li>
-                <li style={{ marginBottom: '0.5rem' }}><strong>Available Themes:</strong> Aurora, Zen, Terracotta, Neon, Opulence, Soft Pastel, Comic, Summit, Velocity, Valor, Vogue, Vitality, Sterling, Syntax, Nexus, Ember, Prism</li>
+                <li style={{ marginBottom: '0.5rem' }}><strong>Available Themes:</strong> Aurora, Zen, Terracotta, Neon, Opulence, Soft Pastel, Comic, Summit, Velocity, Valor, Vogue, Vitality, Sterling, Syntax, Nexus, Ember, Prism, Verdant</li>
               </ol>
               <h4 style={{ marginTop: '1rem', marginBottom: '0.5rem' }}>Code Example:</h4>
               <pre style={{ background: 'hsl(var(--background))', padding: '1rem', borderRadius: '0.25rem', overflow: 'auto', fontSize: '0.875rem' }}>
