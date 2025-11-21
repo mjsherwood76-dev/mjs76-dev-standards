@@ -49,7 +49,7 @@ Always check `.gitignore` before committing. See [detailed git rules](./.copilot
 
 ### Design System & Theming
 - **Token-based styling** - Use semantic Tailwind classes (`bg-background`, `text-primary`, etc.)
-- **17 themes available** - All UI must work across themes and light/dark modes
+- **18 themes available** - All UI must work across themes and light/dark modes
 - **Shared components** - Use `@/components/ui` primitives; don't create ad-hoc styles
 - **Responsive** - All UI must work on mobile and desktop
 - **Accessible** - Semantic HTML, labels, keyboard navigation, visible focus states
@@ -85,12 +85,12 @@ Detailed instructions for each stack:
 **When to use:** Working with UI, visual changes, theme implementation
 
 ### Overview
-- **17 visual themes** with full light/dark mode support
+- **18 visual themes** with full light/dark mode support
 - **Implementation:** `data-theme` attribute on `<html>` controls theme, `class="dark"` controls mode
 - **Tokens:** All themes provide same CSS variables (`--background`, `--primary`, `--radius-lg`, etc.)
 
 ### Available Themes
-Aurora, Zen, Terracotta, Neon, Opulence, Soft Pastel, Comic, Summit, Velocity, Valor, Vogue, Vitality, Sterling, Syntax, Nexus, Ember, Prism
+Aurora, Zen, Terracotta, Neon, Opulence, Soft Pastel, Comic, Summit, Velocity, Valor, Vogue, Vitality, Sterling, Syntax, Nexus, Ember, Prism, Verdant, Verdant
 
 ### Key Rules
 - ✅ Use semantic Tailwind classes (`bg-primary`, `text-foreground`)

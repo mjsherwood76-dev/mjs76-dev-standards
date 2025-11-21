@@ -1,6 +1,6 @@
 # Theme Profiles
 
-Complete profiles for all 17 visual themes in the mjs76 design system.
+Complete profiles for all 18 visual themes in the mjs76 design system.
 
 ---
 
@@ -524,7 +524,7 @@ const themes = [
   'aurora', 'zen', 'terracotta', 'neon', 'opulence',
   'soft-pastel', 'comic', 'summit', 'velocity', 'valor',
   'vogue', 'vitality', 'sterling', 'syntax', 'nexus',
-  'ember', 'prism'
+  'ember', 'prism', 'verdant'
 ]
 
 function ThemeSwitcher() {
@@ -581,7 +581,7 @@ When updating a theme:
 - **Elegant**: Opulence, Vogue
 - **Warm**: Terracotta, Ember
 - **Cool**: Neon, Syntax
-- **Natural**: Summit, Terracotta
+- **Natural**: Summit, Terracotta, Verdant
 - **Professional**: Aurora, Vitality, Sterling
 
 ### By User Experience
@@ -590,7 +590,7 @@ When updating a theme:
 - **Visual-Heavy**: Prism, Vogue, Comic
 - **Data-Dense**: Syntax, Sterling, Aurora
 - **Interactive**: Nexus, Velocity, Comic
-- **Calm**: Zen, Soft Pastel, Vitality
+- **Calm**: Zen, Soft Pastel, Vitality, Verdant
 - **Energetic**: Velocity, Nexus, Comic
 
 ---

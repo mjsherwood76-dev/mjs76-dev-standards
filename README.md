@@ -11,11 +11,11 @@ It defines:
 - A **centralized design system**:
   - Tailwind-based tokens
   - Shared UI components (shadcn/ui on top of Radix)
-  - A **multi-theme system** with **17 visual themes**:
+  - A **multi-theme system** with **18 visual themes**:
     - Aurora (Modern SaaS), Zen (Minimalist), Terracotta (Earthy), Neon (Cyber-noir), Opulence (Luxury)
     - Soft Pastel, Comic, Summit, Velocity, Valor
     - Vogue, Vitality, Sterling, Syntax, Nexus
-    - Ember, Prism
+    - Ember, Prism, Verdant (Pacific Northwest)
 - Testing requirements
 - AI agent behavior (planning, implementation, testing) and global Copilot instructions
 

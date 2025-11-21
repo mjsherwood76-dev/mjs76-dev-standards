@@ -623,6 +623,7 @@ All projects must ship the same five branded styles (`default`, `minimalist`, `e
 | Earthy / Terracotta | Public Sans | Source Serif 4 | IBM Plex Mono · DM Mono | Blends organic warmth with editorial polish. |
 | Cyber-Noir / Neon | Space Grotesk | Orbitron | JetBrains Mono · Fira Code | High-tech geometry that mirrors neon accents. |
 | Luxury / Opulence | Manrope | Cormorant Garamond | IBM Plex Mono · Nimbus Mono | Premium editorial feel with precise body copy. |
+| Verdant / Pacific Northwest | Inter | Merriweather | IBM Plex Mono · Fira Code | Natural editorial with forest-inspired warmth. |
 
 ### 4.3 Component Geometry & Elevation by Theme
 
@@ -633,6 +634,7 @@ All projects must ship the same five branded styles (`default`, `minimalist`, `e
 | Earthy / Terracotta | 1.5 / 1 / 0.5 rem | 0.875 rem | 1.5 rem | Rounded capsules + warm, diffuse shadows. |
 | Cyber-Noir / Neon | 1 / 0.5 / 0.3 rem | 999px (pill) | 0.75 rem | Glassy floating cards with dramatic glow. |
 | Luxury / Opulence | 1.75 / 1 / 0.5 rem | 999px (capsule) | 1.5 rem | Deep, velvety shadow evoking premium layers. |
+| Verdant / Pacific NW | 1 / 0.625 / 0.375 rem | 0.625 rem | 1 rem | Organic rounding with forest-tinted shadows. |
 
 The tokens in each CSS block mirror this table so components automatically inherit their shape and elevation from the active theme.
 
@@ -645,6 +647,7 @@ The tokens in each CSS block mirror this table so components automatically inher
 | Earthy / Terracotta | 2.85rem | 1.5rem | 3.5rem | Generous breathing room for editorial feel. |
 | Cyber-Noir / Neon | 2.6rem | 1.1rem | 2.75rem | Agile layouts with tight stack spacing. |
 | Luxury / Opulence | 3rem | 1.4rem | 3.75rem | Tall controls and elongated sections for drama. |
+| Verdant / Pacific NW | 2.75rem | 1.25rem | 3rem | Balanced comfort with natural breathing room. |
 
 ### 4.5 Motion & Iconography Tokens by Theme
 
@@ -655,6 +658,7 @@ The tokens in each CSS block mirror this table so components automatically inher
 | Earthy / Terracotta | 150 / 260 / 380 ms | `cubic-bezier(0.25, 0.1, 0.25, 1)` | `cubic-bezier(0.05, 0.7, 0.1, 1)` | 1.85px · 6px | Organic easing with softened glyph corners. |
 | Cyber-Noir / Neon | 90 / 160 / 240 ms | `cubic-bezier(0.83, 0, 0.17, 1)` | `cubic-bezier(0.68, -0.6, 0.32, 1.6)` | 2px · 0px | Snappy, high-tech motion and razor icons. |
 | Luxury / Opulence | 140 / 260 / 420 ms | `cubic-bezier(0.19, 1, 0.22, 1)` | `cubic-bezier(0.22, 1, 0.36, 1)` | 1.4px · 10px | Languid easing with jeweler-grade cornering. |
+| Verdant / Pacific NW | 180 / 280 / 420 ms | `cubic-bezier(0.25, 0.46, 0.45, 0.94)` | `cubic-bezier(0.19, 1, 0.22, 1)` | 1.75px · 5px | Natural easing with organic glyph rounding. |
 
 ## 5. Baseline Token Defaults
 

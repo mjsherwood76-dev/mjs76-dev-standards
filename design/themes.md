@@ -153,6 +153,15 @@ This document adds narrative guidance to the token tables in `design/ui-standard
 - **Behavior**: Dramatic 1.5rem card radius, 2rem pill-shaped buttons, multi-layer purple shadows.
 - **Spatial & motion cues**: `--control-height = 3rem` (prominent), dramatic 150-600ms elastic easing `cubic-bezier(0.68, -0.55, 0.265, 1.55)`, expansive 2.5rem gaps.
 
+### 18. Verdant (Pacific Northwest)
+
+- **Mood**: Deep forest green, natural, Pacific Northwest wilderness aesthetic.
+- **Primary use**: Environmental organizations, outdoor brands, conservation platforms, nature-focused content.
+- **Typography**: `--font-sans = Inter`, `--font-heading = Merriweather`, `--font-mono = IBM Plex Mono`.
+- **Behavior**: Organic 1rem corners, earthy shadows with green tint, natural textures.
+- **Spatial & motion cues**: `--control-height = 2.75rem` (comfortable), `--section-gap = 3rem`, natural easing 180-420ms `cubic-bezier(0.25, 0.46, 0.45, 0.94)`, icons 1.75px strokes with 5px organic corners.
+- **When to choose**: For environmental platforms, Pacific Northwest brands, conservation projects, nature photography sites, outdoor recreation apps, sustainability initiatives.
+
 ## Updating a Theme
 
 1. Change the CSS variables for both light and dark variants in `design/ui-standards.md`.
