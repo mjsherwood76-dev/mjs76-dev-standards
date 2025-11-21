@@ -1,8 +1,8 @@
-# Git Instructions for AI Agents
+# Git Guidelines for AI Agents
 
 ## Critical Rules for Git Operations
 
-### Never Commit node_modules or Build Artifacts
+### Never Commit Dependencies or Build Artifacts
 
 **IMPORTANT**: When working with git repositories, NEVER commit the following:
 
@@ -56,7 +56,7 @@ Thumbs.db
 *.swo
 ```
 
-### If node_modules Was Accidentally Committed
+### Recovery from Accidental Commits
 
 If `node_modules` or other build artifacts were accidentally committed:
 

@@ -11,12 +11,11 @@ It defines:
 - A **centralized design system**:
   - Tailwind-based tokens
   - Shared UI components (shadcn/ui on top of Radix)
-  - A **multi-theme system** with 5 visual styles:
-    - `default` (Modern)
-    - `minimalist`
-    - `earthy`
-    - `cyber-noir`
-    - `luxury`
+  - A **multi-theme system** with **17 visual themes**:
+    - Aurora (Modern SaaS), Zen (Minimalist), Terracotta (Earthy), Neon (Cyber-noir), Opulence (Luxury)
+    - Soft Pastel, Comic, Summit, Velocity, Valor
+    - Vogue, Vitality, Sterling, Syntax, Nexus
+    - Ember, Prism
 - Testing requirements
 - AI agent behavior (planning, implementation, testing) and global Copilot instructions
 
@@ -24,30 +23,45 @@ Every new project must reference this repo at creation time and follow these sta
 
 ---
 
+## Quick Start for AI Agents
+
+**👉 Start here:** [`.github/copilot-instructions.md`](.github/copilot-instructions.md)
+
+This is the single entry point for all AI agents. It provides:
+- Core principles and quick navigation
+- Links to detailed stack guides (Next.js, Cloudflare)
+- Theme system overview
+- Agent workflow guidance
+
+**Don't read everything at once** - use the navigation to find what you need.
+
+---
+
 ## Repository Structure
 
-Current structure (simplified):
+New consolidated structure:
 
 ```text
 mjs76-dev-standards/
   README.md
 
   .github/
-    instructions/         # reserved for CI/tooling guidance (currently empty)
-
-  agents/
-    planning.agent.md
-    implementation.agent.md
-    testing.agent.md
-
-  ai/
-    AGENTS.md
+    copilot-instructions.md       # 🎯 SINGLE ENTRY POINT for AI agents
+    copilot/
+      stack-guides/               # Detailed tech stack documentation
+        nextjs.md                 # Frontend guide
+        backend-workers.md        # Backend guide
+      agent-workflows/            # Multi-step task workflows
+        WORKFLOWS.md              # Planning → Implementation → Testing
+      theme-system/               # Design system details
+        theme-profiles.md         # All 17 theme profiles
+      git-guidelines.md           # Git best practices
 
   backend/
-    backend.instructions.md
+    backend.instructions.md       # DEPRECATED - see .github/copilot/stack-guides/
 
   frontend/
-    frontend.instructions.md
+    frontend.instructions.md      # DEPRECATED - see .github/copilot/stack-guides/
 
   design/
     ui-standards.md      # canonical UI + theming spec (tokens, components)
