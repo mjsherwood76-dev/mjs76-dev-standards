@@ -9,7 +9,7 @@ Quick-start templates that follow mjs76 Development Standards out of the box.
 Complete full-stack application with:
 - **Frontend**: Next.js 14 App Router, React 18, TypeScript, Tailwind CSS
 - **Backend**: Cloudflare Workers with D1, KV, R2, Queues
-- **Design**: All 5 themes (Aurora, Zen, Terracotta, Neon, Opulence) with light/dark modes
+- **Design**: All 17 themes (Aurora, Zen, Terracotta, Neon, Opulence, Soft Pastel, Comic, Summit, Velocity, Valor, Vogue, Vitality, Sterling, Syntax, Nexus, Ember, Prism) with light/dark modes
 - **Components**: Pre-configured shadcn/ui components
 - **Testing**: Vitest, Playwright, React Testing Library setup
 - **CI/CD**: GitHub Actions workflows included

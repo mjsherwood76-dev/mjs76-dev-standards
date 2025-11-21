@@ -39,7 +39,7 @@ When reporting issues:
 Enhancement proposals should:
 1. Explain the use case clearly
 2. Show how it fits with existing standards
-3. Consider impact on all 5 themes
+3. Consider impact on all 17 themes
 4. Maintain backward compatibility where possible
 
 ### Pull Requests
@@ -82,7 +82,7 @@ Follow these guidelines:
 - Update token definitions in `design/ui-standards.md`
 - Update narrative guidance in `design/themes.md`
 - Apply changes to demo applications (`frontend/demo` and `frontend/demo-app`)
-- Test across **all 5 themes** and **light/dark modes**
+- Test across **all 17 themes** and **light/dark modes**
 - Verify WCAG AA contrast ratios
 
 #### For Documentation Changes

@@ -38,7 +38,7 @@ export default function Home() {
 
           <Card>
             <CardHeader>
-              <CardTitle>5 Themes</CardTitle>
+              <CardTitle>17 Themes</CardTitle>
               <CardDescription>Light and dark modes</CardDescription>
             </CardHeader>
             <CardContent>

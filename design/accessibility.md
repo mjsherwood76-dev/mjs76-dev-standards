@@ -123,7 +123,7 @@ Content must be robust enough to be interpreted by a wide variety of user agents
 
 ## Theme-Specific Considerations
 
-All 5 themes must maintain accessibility across light/dark modes.
+All 17 themes must maintain accessibility across light/dark modes.
 
 ### Color Contrast Validation
 

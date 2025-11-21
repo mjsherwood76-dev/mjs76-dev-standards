@@ -23,7 +23,7 @@ This document covers the customized **shadcn/ui** components used across mjs76 D
 
 ## Overview
 
-All components are built with **shadcn/ui** as the foundation, customized to work seamlessly with our **5 theme system** (Default/Aurora, Minimalist/Zen, Earthy/Terracotta, Cyber-Noir/Neon, Luxury/Opulence) across light and dark modes.
+All components are built with **shadcn/ui** as the foundation, customized to work seamlessly with our **17 theme system** (Aurora, Zen, Terracotta, Neon, Opulence, Soft Pastel, Comic, Summit, Velocity, Valor, Vogue, Vitality, Sterling, Syntax, Nexus, Ember, Prism) across light and dark modes.
 
 ### Design Principles
 
@@ -353,11 +353,23 @@ import {
     <SelectValue placeholder="Select theme" />
   </SelectTrigger>
   <SelectContent>
-    <SelectItem value="aurora">Default (Aurora)</SelectItem>
-    <SelectItem value="zen">Minimalist (Zen)</SelectItem>
-    <SelectItem value="terracotta">Earthy (Terracotta)</SelectItem>
-    <SelectItem value="neon">Cyber-Noir (Neon)</SelectItem>
-    <SelectItem value="opulence">Luxury (Opulence)</SelectItem>
+    <SelectItem value="aurora">Aurora</SelectItem>
+    <SelectItem value="zen">Zen</SelectItem>
+    <SelectItem value="terracotta">Terracotta</SelectItem>
+    <SelectItem value="neon">Neon</SelectItem>
+    <SelectItem value="opulence">Opulence</SelectItem>
+    <SelectItem value="soft-pastel">Soft Pastel</SelectItem>
+    <SelectItem value="comic">Comic</SelectItem>
+    <SelectItem value="summit">Summit</SelectItem>
+    <SelectItem value="velocity">Velocity</SelectItem>
+    <SelectItem value="valor">Valor</SelectItem>
+    <SelectItem value="vogue">Vogue</SelectItem>
+    <SelectItem value="vitality">Vitality</SelectItem>
+    <SelectItem value="sterling">Sterling</SelectItem>
+    <SelectItem value="syntax">Syntax</SelectItem>
+    <SelectItem value="nexus">Nexus</SelectItem>
+    <SelectItem value="ember">Ember</SelectItem>
+    <SelectItem value="prism">Prism</SelectItem>
   </SelectContent>
 </Select>
 ```
@@ -769,15 +781,27 @@ All components meet WCAG 2.1 AA requirements. See [design/accessibility.md](./ac
 
 ## Theme Testing
 
-When modifying components, test across all 10 combinations:
+When modifying components, test across all 34 combinations (17 themes × 2 modes):
 
 | Theme | Light Mode | Dark Mode |
-|-------|------------|-----------|
-| Default (Aurora) | ✅ | ✅ |
-| Minimalist (Zen) | ✅ | ✅ |
-| Earthy (Terracotta) | ✅ | ✅ |
-| Cyber-Noir (Neon) | ✅ | ✅ |
-| Luxury (Opulence) | ✅ | ✅ |
+|-------|------------|--------|
+| Aurora | ✅ | ✅ |
+| Zen | ✅ | ✅ |
+| Terracotta | ✅ | ✅ |
+| Neon | ✅ | ✅ |
+| Opulence | ✅ | ✅ |
+| Soft Pastel | ✅ | ✅ |
+| Comic | ✅ | ✅ |
+| Summit | ✅ | ✅ |
+| Velocity | ✅ | ✅ |
+| Valor | ✅ | ✅ |
+| Vogue | ✅ | ✅ |
+| Vitality | ✅ | ✅ |
+| Sterling | ✅ | ✅ |
+| Syntax | ✅ | ✅ |
+| Nexus | ✅ | ✅ |
+| Ember | ✅ | ✅ |
+| Prism | ✅ | ✅ |
 
 Use the demo app at `frontend/demo-app` to visually verify.
 

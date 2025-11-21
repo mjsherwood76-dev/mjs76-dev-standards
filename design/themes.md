@@ -48,14 +48,110 @@ This document adds narrative guidance to the token tables in `design/ui-standard
 - **Notes**: Keep animations snappy (<200 ms) and leverage accent strokes for separators.
 - **Spatial & motion cues**: `--control-height = 2.6rem`, `--section-gap = 2.75rem`, ultra-fast motion (90/160/240 ms) with `cubic-bezier(0.83,0,0.17,1)`; icons are razor-thin at 2px stroke with 0px corners.
 
-### 5. Luxury (“Opulence”)
+### 5. Luxury ("Opulence")
 
 - **Mood**: Premium, editorial, jewel tones with metallic accents.
 - **Primary use**: Concierge services, premium memberships, boutique e-commerce.
 - **Typography**: `--font-sans = Manrope`, `--font-heading = Cormorant Garamond`, `--font-mono = IBM Plex/Nimbus Mono`.
 - **Behavior**: Favor generous spacing, fine borders, and layered cards.
 - **Notes**: Use accent gold sparingly for emphasis; rely on deep plum backgrounds for contrast.
-- **Spatial & motion cues**: `--control-height = 3rem`, `--section-gap = 3.75rem`, motion 140/260/420 ms with `cubic-bezier(0.19,1,0.22,1)` and icons set to 1.4px strokes plus 10px rounded corners for ornamented finishes.
+- **Spatial & motion cues**: `--control-height = 3rem`, `--section-gap = 3.75rem`, motion 140/260/420 ms with `cubic-bezier(0.19,1,0.22,1)` and icons set to 1.4px strokes plus 10px rounded corners for ornamented finishes.
+
+### 6. Soft Pastel
+
+- **Mood**: Gentle, approachable, dreamy pastels.
+- **Primary use**: Creative portfolios, wellness apps, children's content.
+- **Typography**: Standard Inter-based system fonts with softer weights.
+- **Behavior**: Soft shadows, generous spacing, rounded corners.
+- **Spatial & motion cues**: Standard motion timings with gentle easing curves.
+
+### 7. Comic
+
+- **Mood**: Playful, energetic, bold illustrations.
+- **Primary use**: Gaming, entertainment, youth-focused applications.
+- **Typography**: Display fonts with character, bold headings.
+- **Behavior**: High contrast, vibrant colors, comic-style borders.
+- **Spatial & motion cues**: Snappy animations, bold visual feedback.
+
+### 8. Summit (Outdoor/Adventure)
+
+- **Mood**: Nature-inspired, adventurous, outdoor rugged.
+- **Primary use**: Outdoor brands, fitness, adventure travel.
+- **Typography**: Strong, bold fonts with outdoor aesthetic.
+- **Behavior**: Earthy tones, textured elements, organic shapes.
+- **Spatial & motion cues**: Robust controls, natural motion curves.
+
+### 9. Velocity (Action Sports)
+
+- **Mood**: High-energy, dynamic, athletic.
+- **Primary use**: Sports apps, fitness tracking, active lifestyle brands.
+- **Typography**: Angular, dynamic fonts suggesting motion.
+- **Behavior**: Sharp angles, energetic colors, motion-forward design.
+- **Spatial & motion cues**: Fast transitions, responsive feedback.
+
+### 10. Valor (Combat/Military)
+
+- **Mood**: Tactical, serious, disciplined.
+- **Primary use**: Strategy games, military applications, security software.
+- **Typography**: Strong, authoritative fonts with military precision.
+- **Behavior**: Structured grids, tactical color schemes, clear hierarchies.
+- **Spatial & motion cues**: Precise, controlled animations.
+
+### 11. Vogue (Fashion)
+
+- **Mood**: Elegant, sophisticated, editorial fashion.
+- **Primary use**: Fashion e-commerce, luxury retail, style blogs.
+- **Typography**: High-fashion editorial fonts, elegant serifs.
+- **Behavior**: Clean lines, elegant spacing, sophisticated color palettes.
+- **Spatial & motion cues**: Smooth, refined transitions with editorial pacing.
+
+### 12. Vitality (Healthcare)
+
+- **Mood**: Clean, trustworthy, professional healthcare aesthetic.
+- **Primary use**: Healthcare applications, medical dashboards, wellness platforms.
+- **Typography**: Inter-based fonts throughout for maximum readability.
+- **Behavior**: Rounded 0.75rem corners, soft blue shadows, professional spacing.
+- **Spatial & motion cues**: `--control-height = 2.75rem`, fast 150-350ms motion, 2px icon strokes, accessible design patterns.
+
+### 13. Sterling (Finance)
+
+- **Mood**: Conservative, formal, traditional financial aesthetic.
+- **Primary use**: Banking applications, financial dashboards, investment platforms.
+- **Typography**: Crimson Pro serif headings with Inter body for authority and readability.
+- **Behavior**: Minimal 0.125rem radius, subtle shadows, conservative spacing.
+- **Spatial & motion cues**: `--control-height = 2.5rem`, fast 120-300ms motion, 1.5px icon strokes, 600 font weight buttons for confidence.
+
+### 14. Syntax (Developer/Tech)
+
+- **Mood**: Terminal-like, information-dense, developer-focused aesthetic.
+- **Primary use**: Developer tools, code editors, technical documentation, API dashboards.
+- **Typography**: JetBrains Mono for ALL text (sans, heading, mono) creating cohesive monospace aesthetic.
+- **Behavior**: Sharp 0.25rem corners, hard borders with dual shadows, dense spacing.
+- **Spatial & motion cues**: `--control-height = 2.25rem` (compact), snappy 100-250ms motion, 1.5px icon strokes, terminal-inspired design.
+
+### 15. Nexus (Gaming)
+
+- **Mood**: Aggressive, bold, high-energy gaming aesthetic.
+- **Primary use**: Gaming platforms, esports applications, competitive gaming dashboards.
+- **Typography**: Rajdhani/Orbitron futuristic display fonts for dramatic impact.
+- **Behavior**: Angular 0.125rem cuts, dramatic purple glow shadows with 2px borders.
+- **Spatial & motion cues**: `--control-height = 2.875rem` (substantial), snappy 80-280ms motion, 2.5px thick icon strokes, 700 font weight for boldness.
+
+### 16. Ember (Culinary/Food)
+
+- **Mood**: Warm, inviting, friendly culinary aesthetic.
+- **Primary use**: Restaurant applications, recipe platforms, food delivery services.
+- **Typography**: Quicksand/Nunito friendly rounded fonts for approachability.
+- **Behavior**: Very rounded 1.25rem corners, 1.5rem pill-shaped buttons, warm orange-tinted layered shadows.
+- **Spatial & motion cues**: `--control-height = 3rem` (easy interaction), bouncy 200-500ms spring easing `cubic-bezier(0.34, 1.56, 0.64, 1)`.
+
+### 17. Prism (Creative Agency)
+
+- **Mood**: Bold, dramatic, creative agency aesthetic with experimental design.
+- **Primary use**: Creative agencies, design portfolios, innovative digital products.
+- **Typography**: Montserrat/Poppins geometric fonts for modern boldness.
+- **Behavior**: Dramatic 1.5rem card radius, 2rem pill-shaped buttons, multi-layer purple shadows.
+- **Spatial & motion cues**: `--control-height = 3rem` (prominent), dramatic 150-600ms elastic easing `cubic-bezier(0.68, -0.55, 0.265, 1.55)`, expansive 2.5rem gaps.
 
 ## Updating a Theme
 

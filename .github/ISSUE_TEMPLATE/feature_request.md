@@ -77,7 +77,7 @@ Link to related issues or pull requests.
 ## Checklist
 
 - [ ] I have searched existing issues to avoid duplicates
-- [ ] I have considered impact on all 5 themes (if design-related)
+- [ ] I have considered impact on all 17 themes (if design-related)
 - [ ] I have considered backward compatibility
 - [ ] I have provided usage examples
 - [ ] I am willing to contribute this feature

@@ -58,7 +58,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   
 - **Project Template Starter Kit**
   - Complete Next.js 14 + Cloudflare project template in templates/nextjs-cloudflare/
-  - All five themes pre-configured (Aurora, Zen, Terracotta, Neon, Opulence) with light/dark modes
+  - All 17 themes pre-configured (Aurora, Zen, Terracotta, Neon, Opulence, Soft Pastel, Comic, Summit, Velocity, Valor, Vogue, Vitality, Sterling, Syntax, Nexus, Ember, Prism) with light/dark modes
   - shadcn/ui components included (Button, Card, Input, Select)
   - ThemeProvider and ThemeSwitcher components
   - Cloudflare Worker with CORS, health check, and example API endpoint
@@ -132,7 +132,7 @@ If your project was created before these standards:
 3. **Migrate Components**: Replace hardcoded colors/radii with token-based classes
 4. **Add Theme Attributes**: Ensure `<html>` has `data-theme` and `data-mode` attributes
 5. **Install Required Packages**: `next-themes`, `tailwindcss-animate`
-6. **Test All Themes**: Verify UI works across all 5 themes and light/dark modes
+6. **Test All Themes**: Verify UI works across all 17 themes and light/dark modes
 
 [Unreleased]: https://github.com/mjsherwood76-dev/mjs76-dev-standards/compare/v1.0.0...HEAD
 [1.0.0]: https://github.com/mjsherwood76-dev/mjs76-dev-standards/releases/tag/v1.0.0

@@ -100,7 +100,7 @@ npm run test:e2e:ui      # Playwright UI mode
 
 ## Themes
 
-Switch between 5 themes with light/dark modes:
+Switch between 17 themes with light/dark modes:
 
 - **Default (Aurora)**: Professional blue with green accents
 - **Minimalist (Zen)**: Clean grays and subtle colors

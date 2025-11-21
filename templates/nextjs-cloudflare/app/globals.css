@@ -11,7 +11,7 @@
   }
 }
 
-/* All 5 themes with light/dark modes */
+/* All 17 themes with light/dark modes */
 
 :root[data-mode='light'][data-theme='aurora'] {
   --background: 210 20% 98%;
