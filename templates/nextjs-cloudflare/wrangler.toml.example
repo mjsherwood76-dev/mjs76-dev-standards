@@ -1,0 +1,52 @@
+# Cloudflare Worker Configuration
+# Copy this file to wrangler.toml and fill in your values
+
+name = "my-project-worker"
+main = "workers/src/index.ts"
+compatibility_date = "2024-11-20"
+
+# Account ID (get from Cloudflare dashboard)
+account_id = "YOUR_ACCOUNT_ID_HERE"
+
+# D1 Database
+[[d1_databases]]
+binding = "DB"
+database_name = "my-database"
+database_id = "YOUR_DATABASE_ID_HERE"  # Get with: wrangler d1 create my-database
+
+# KV Namespace
+[[kv_namespaces]]
+binding = "KV"
+id = "YOUR_KV_ID_HERE"  # Get with: wrangler kv:namespace create KV
+
+# R2 Bucket
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "my-bucket"  # Get with: wrangler r2 bucket create my-bucket
+
+# Queue
+[[queues.producers]]
+binding = "QUEUE"
+queue = "my-queue"  # Get with: wrangler queues create my-queue
+
+[[queues.consumers]]
+queue = "my-queue"
+max_batch_size = 10
+max_batch_timeout = 30
+
+# Secrets (set with: wrangler secret put SECRET_NAME)
+# JWT_SECRET
+# API_KEY
+# STRIPE_SECRET_KEY
+
+# Environment Variables
+[vars]
+ENVIRONMENT = "development"
+LOG_LEVEL = "debug"
+
+# Production environment
+[env.production]
+name = "my-project-worker-production"
+[env.production.vars]
+ENVIRONMENT = "production"
+LOG_LEVEL = "info"

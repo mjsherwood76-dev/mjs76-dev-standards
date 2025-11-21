@@ -1,0 +1,774 @@
+/*
+  Demo site styles showcasing the design/UI standards.
+  The CSS mirrors the token definitions from design/ui-standards.md so
+  the static page can switch between themes without custom overrides.
+*/
+
+:root {
+  font-size: 16px;
+  color-scheme: light;
+  --transition-base: var(--motion-duration-base, 200ms);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans, "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif);
+  background: hsl(var(--background, 210 20% 98%));
+  color: hsl(var(--foreground, 222 47% 11%));
+  transition: background-color var(--transition-base) var(--motion-ease, ease),
+              color var(--transition-base) var(--motion-ease, ease);
+}
+
+body[data-density='compact'] main {
+  gap: calc(var(--section-gap, 3rem) - 1rem);
+}
+
+body[data-density='compact'] section {
+  padding: 1.5rem;
+}
+
+body[data-density='compact'] .controls {
+  padding: 1rem;
+}
+
+body[data-density='compact'] button,
+body[data-density='compact'] .button,
+body[data-density='compact'] input,
+body[data-density='compact'] select,
+body[data-density='compact'] textarea {
+  height: calc(var(--control-height, 2.75rem) - 0.35rem);
+}
+
+body::selection {
+  background: hsl(var(--accent, 221 83% 53%));
+  color: hsl(var(--accent-foreground, 0 0% 100%));
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap, 3rem);
+}
+
+section {
+  background: hsl(var(--muted, 220 14% 96%) / 0.3);
+  border: 1px solid hsl(var(--border, 218 15% 85%));
+  border-radius: var(--radius-lg, 1rem);
+  padding: 2rem;
+  box-shadow: 0 1px 2px hsl(var(--foreground) / 0.05);
+}
+
+section header {
+  margin-bottom: var(--stack-gap, 1.25rem);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading, var(--font-sans));
+  margin: 0 0 0.5rem;
+}
+
+p {
+  margin: 0 0 1rem;
+  line-height: 1.7;
+}
+
+a {
+  color: hsl(var(--accent));
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  background: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow, none);
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+button,
+.button {
+  all: unset;
+  cursor: pointer;
+  padding: 0 1.5rem;
+  height: var(--control-height, 2.75rem);
+  border-radius: var(--button-radius, 0.75rem);
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  font-weight: var(--button-font-weight, 600);
+  letter-spacing: 0.01em;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: transform var(--motion-duration-fast, 120ms) var(--motion-ease, ease),
+              box-shadow var(--motion-duration-fast, 120ms) var(--motion-ease, ease),
+              background var(--motion-duration-fast, 120ms) var(--motion-ease, ease);
+  box-shadow: 0 10px 20px -12px hsl(var(--primary) / 0.6);
+}
+
+button.secondary {
+  background: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  box-shadow: none;
+}
+
+button.accent {
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+button.ghost {
+  background: transparent;
+  border: 1px solid hsl(var(--border));
+  color: hsl(var(--foreground));
+  box-shadow: none;
+}
+
+button:focus-visible,
+.button:focus-visible {
+  outline: 2px solid hsl(var(--accent));
+  outline-offset: 3px;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px -18px hsl(var(--accent) / 0.8);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--stack-gap, 1.25rem);
+}
+
+.card {
+  border-radius: var(--card-radius, 1rem);
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--background));
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow, none);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card h4 {
+  margin: 0;
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-sm, 0.375rem);
+  border: 1px solid hsl(var(--border));
+  font-size: 0.875rem;
+  background: hsl(var(--muted) / 0.3);
+}
+
+.badge.success {
+  color: hsl(var(--success));
+}
+
+.badge.warning {
+  color: hsl(var(--warning));
+}
+
+.badge.info {
+  color: hsl(var(--info));
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  padding: 0 1rem;
+  height: var(--control-height, 2.75rem);
+  border-radius: var(--radius-md, 0.75rem);
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  transition: border-color var(--motion-duration-fast, 120ms) var(--motion-ease, ease),
+              box-shadow var(--motion-duration-fast, 120ms) var(--motion-ease, ease);
+}
+
+textarea {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  min-height: 6rem;
+  resize: vertical;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  border-color: hsl(var(--accent));
+  box-shadow: 0 0 0 2px hsl(var(--accent) / 0.35);
+}
+
+.table-demo {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-demo th,
+.table-demo td {
+  border: 1px solid hsl(var(--border));
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.table-demo thead {
+  background: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+}
+
+.alerts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.alert {
+  border-radius: var(--radius-md, 0.75rem);
+  padding: 1rem 1.2rem;
+  border: 1px solid transparent;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  background: hsl(var(--muted) / 0.35);
+}
+
+.alert.success {
+  border-color: hsl(var(--success));
+  color: hsl(var(--success));
+}
+
+.alert.warning {
+  border-color: hsl(var(--warning));
+  color: hsl(var(--warning));
+}
+
+.alert.destructive {
+  border-color: hsl(var(--destructive));
+  color: hsl(var(--destructive));
+}
+
+.alert.info {
+  border-color: hsl(var(--info));
+  color: hsl(var(--info));
+}
+
+.token-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.token-tile {
+  border: 1px dashed hsl(var(--border));
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  background: hsl(var(--background));
+}
+
+.token-swatch {
+  width: 100%;
+  height: 2.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  margin: 0.5rem 0;
+}
+
+pre {
+  margin: 0;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: 0.85rem;
+  color: hsl(var(--muted-foreground, 221 15% 38%));
+}
+
+hr {
+  border: none;
+  border-top: 1px solid hsl(var(--border));
+  margin: 2rem 0;
+}
+
+/* Theme token definitions */
+
+:root[data-mode='light'][data-theme='default'] {
+  --background: 210 20% 98%;
+  --foreground: 222 47% 11%;
+  --primary: 221 83% 53%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 217 33% 90%;
+  --secondary-foreground: 222 47% 11%;
+  --accent: 160 84% 39%;
+  --accent-foreground: 0 0% 100%;
+  --muted: 220 14% 96%;
+  --muted-foreground: 221 15% 38%;
+  --border: 218 15% 85%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 142 72% 29%;
+  --success-foreground: 140 43% 93%;
+  --warning: 38 92% 50%;
+  --warning-foreground: 40 100% 98%;
+  --info: 201 96% 32%;
+  --info-foreground: 199 89% 96%;
+  --radius-lg: 1.25rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.375rem;
+  --button-radius: 0.75rem;
+  --button-font-weight: 600;
+  --card-radius: 1.25rem;
+  --card-shadow: 0 25px 45px -20px rgba(15,23,42,0.25);
+  --control-height: 2.75rem;
+  --stack-gap: 1.25rem;
+  --section-gap: 3rem;
+  --motion-duration-fast: 120ms;
+  --motion-duration-base: 200ms;
+  --motion-duration-slow: 320ms;
+  --motion-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-ease-emphasis: cubic-bezier(0.2, 0, 0, 1);
+  --icon-stroke: 1.75px;
+  --icon-corner: 4px;
+  --font-sans: "Inter", "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: "Cal Sans", "Poppins", "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "Fira Code", "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root[data-mode='dark'][data-theme='default'] {
+  --background: 222 47% 11%;
+  --foreground: 210 20% 98%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 222 47% 11%;
+  --secondary: 222 14% 25%;
+  --secondary-foreground: 210 20% 98%;
+  --accent: 160 84% 39%;
+  --accent-foreground: 0 0% 0%;
+  --muted: 222 14% 25%;
+  --muted-foreground: 215 20% 80%;
+  --border: 217 15% 35%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 142 72% 45%;
+  --success-foreground: 144 70% 96%;
+  --warning: 38 92% 60%;
+  --warning-foreground: 48 100% 92%;
+  --info: 201 96% 45%;
+  --info-foreground: 199 89% 96%;
+  --radius-lg: 1.25rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.375rem;
+  --button-radius: 0.75rem;
+  --button-font-weight: 600;
+  --card-radius: 1.25rem;
+  --card-shadow: 0 30px 55px -25px rgba(0,5,20,0.65);
+  --control-height: 2.75rem;
+  --stack-gap: 1.25rem;
+  --section-gap: 3rem;
+  --motion-duration-fast: 120ms;
+  --motion-duration-base: 200ms;
+  --motion-duration-slow: 320ms;
+  --motion-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-ease-emphasis: cubic-bezier(0.2, 0, 0, 1);
+  --icon-stroke: 1.75px;
+  --icon-corner: 4px;
+  --font-sans: "Inter", "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: "Cal Sans", "Poppins", "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "Fira Code", "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root[data-mode='light'][data-theme='minimalist'] {
+  --background: 0 0% 100%;
+  --foreground: 210 10% 20%;
+  --primary: 210 16% 24%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 10% 92%;
+  --secondary-foreground: 210 10% 30%;
+  --accent: 210 8% 25%;
+  --accent-foreground: 0 0% 100%;
+  --muted: 210 12% 96%;
+  --muted-foreground: 210 8% 45%;
+  --border: 210 7% 85%;
+  --destructive: 0 65% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 150 15% 32%;
+  --success-foreground: 0 0% 100%;
+  --warning: 42 70% 50%;
+  --warning-foreground: 35 100% 96%;
+  --info: 210 60% 45%;
+  --info-foreground: 210 40% 96%;
+  --radius-lg: 0.75rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.25rem;
+  --button-radius: 0.35rem;
+  --button-font-weight: 500;
+  --card-radius: 0.5rem;
+  --card-shadow: 0 18px 28px -24px rgba(15,23,42,0.35);
+  --control-height: 2.5rem;
+  --stack-gap: 1rem;
+  --section-gap: 2.5rem;
+  --motion-duration-fast: 160ms;
+  --motion-duration-base: 240ms;
+  --motion-duration-slow: 360ms;
+  --motion-ease: cubic-bezier(0.33, 1, 0.68, 1);
+  --motion-ease-emphasis: cubic-bezier(0.16, 1, 0.3, 1);
+  --icon-stroke: 1.5px;
+  --icon-corner: 2px;
+  --font-sans: "Source Sans 3", "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: "Space Grotesk", "Clash Display", "Poppins", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "Input Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root[data-mode='dark'][data-theme='minimalist'] {
+  --background: 210 15% 10%;
+  --foreground: 210 20% 92%;
+  --primary: 210 15% 90%;
+  --primary-foreground: 210 15% 15%;
+  --secondary: 210 9% 18%;
+  --secondary-foreground: 210 20% 92%;
+  --accent: 210 5% 70%;
+  --accent-foreground: 210 15% 15%;
+  --muted: 210 8% 18%;
+  --muted-foreground: 210 5% 65%;
+  --border: 210 9% 35%;
+  --destructive: 0 65% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 150 25% 60%;
+  --success-foreground: 150 45% 15%;
+  --warning: 42 80% 64%;
+  --warning-foreground: 42 100% 12%;
+  --info: 210 70% 72%;
+  --info-foreground: 210 30% 12%;
+  --radius-lg: 0.75rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.25rem;
+  --button-radius: 0.35rem;
+  --button-font-weight: 500;
+  --card-radius: 0.5rem;
+  --card-shadow: 0 20px 38px -30px rgba(3,5,12,0.65);
+  --control-height: 2.5rem;
+  --stack-gap: 1rem;
+  --section-gap: 2.5rem;
+  --motion-duration-fast: 160ms;
+  --motion-duration-base: 240ms;
+  --motion-duration-slow: 360ms;
+  --motion-ease: cubic-bezier(0.33, 1, 0.68, 1);
+  --motion-ease-emphasis: cubic-bezier(0.16, 1, 0.3, 1);
+  --icon-stroke: 1.5px;
+  --icon-corner: 2px;
+  --font-sans: "Source Sans 3", "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: "Space Grotesk", "Clash Display", "Poppins", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "Input Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root[data-mode='light'][data-theme='earthy'] {
+  --background: 32 60% 96%;
+  --foreground: 26 35% 18%;
+  --primary: 145 25% 34%;
+  --primary-foreground: 42 27% 95%;
+  --secondary: 32 35% 86%;
+  --secondary-foreground: 26 35% 25%;
+  --accent: 14 70% 55%;
+  --accent-foreground: 28 64% 96%;
+  --muted: 35 30% 90%;
+  --muted-foreground: 24 20% 35%;
+  --border: 32 25% 80%;
+  --destructive: 4 65% 48%;
+  --destructive-foreground: 26 35% 96%;
+  --success: 140 32% 36%;
+  --success-foreground: 42 64% 95%;
+  --warning: 36 78% 52%;
+  --warning-foreground: 32 80% 96%;
+  --info: 194 48% 46%;
+  --info-foreground: 195 62% 92%;
+  --radius-lg: 1.5rem;
+  --radius-md: 1rem;
+  --radius-sm: 0.5rem;
+  --button-radius: 0.875rem;
+  --button-font-weight: 600;
+  --card-radius: 1.5rem;
+  --card-shadow: 0 30px 50px -25px rgba(68,42,28,0.35);
+  --control-height: 2.85rem;
+  --stack-gap: 1.5rem;
+  --section-gap: 3.5rem;
+  --motion-duration-fast: 150ms;
+  --motion-duration-base: 260ms;
+  --motion-duration-slow: 380ms;
+  --motion-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-ease-emphasis: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --icon-stroke: 1.85px;
+  --icon-corner: 6px;
+  --font-sans: "Public Sans", "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: "Source Serif 4", "Playfair Display", serif;
+  --font-mono: "IBM Plex Mono", "DM Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root[data-mode='dark'][data-theme='earthy'] {
+  --background: 24 35% 12%;
+  --foreground: 35 65% 94%;
+  --primary: 145 30% 45%;
+  --primary-foreground: 42 64% 95%;
+  --secondary: 24 28% 22%;
+  --secondary-foreground: 35 65% 90%;
+  --accent: 16 74% 60%;
+  --accent-foreground: 26 35% 12%;
+  --muted: 24 25% 20%;
+  --muted-foreground: 32 25% 75%;
+  --border: 24 23% 32%;
+  --destructive: 4 65% 55%;
+  --destructive-foreground: 26 35% 96%;
+  --success: 140 36% 55%;
+  --success-foreground: 140 25% 14%;
+  --warning: 36 78% 58%;
+  --warning-foreground: 34 90% 12%;
+  --info: 194 54% 62%;
+  --info-foreground: 194 54% 12%;
+  --radius-lg: 1.5rem;
+  --radius-md: 1rem;
+  --radius-sm: 0.5rem;
+  --button-radius: 0.875rem;
+  --button-font-weight: 600;
+  --card-radius: 1.5rem;
+  --card-shadow: 0 32px 52px -24px rgba(30,15,8,0.65);
+  --control-height: 2.85rem;
+  --stack-gap: 1.5rem;
+  --section-gap: 3.5rem;
+  --motion-duration-fast: 150ms;
+  --motion-duration-base: 260ms;
+  --motion-duration-slow: 380ms;
+  --motion-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-ease-emphasis: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --icon-stroke: 1.85px;
+  --icon-corner: 6px;
+  --font-sans: "Public Sans", "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: "Source Serif 4", "Playfair Display", serif;
+  --font-mono: "IBM Plex Mono", "DM Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root[data-mode='light'][data-theme='cyber-noir'] {
+  --background: 220 60% 98%;
+  --foreground: 248 50% 12%;
+  --primary: 260 83% 56%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 230 29% 90%;
+  --secondary-foreground: 248 50% 20%;
+  --accent: 175 100% 40%;
+  --accent-foreground: 0 0% 10%;
+  --muted: 230 25% 93%;
+  --muted-foreground: 248 30% 25%;
+  --border: 235 28% 82%;
+  --destructive: 347 87% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 160 84% 34%;
+  --success-foreground: 168 78% 92%;
+  --warning: 45 100% 55%;
+  --warning-foreground: 48 100% 12%;
+  --info: 200 100% 45%;
+  --info-foreground: 200 100% 96%;
+  --radius-lg: 1rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.3rem;
+  --button-radius: 999px;
+  --button-font-weight: 600;
+  --card-radius: 0.75rem;
+  --card-shadow: 0 40px 65px -28px rgba(26,4,60,0.55);
+  --control-height: 2.6rem;
+  --stack-gap: 1.1rem;
+  --section-gap: 2.75rem;
+  --motion-duration-fast: 90ms;
+  --motion-duration-base: 160ms;
+  --motion-duration-slow: 240ms;
+  --motion-ease: cubic-bezier(0.83, 0, 0.17, 1);
+  --motion-ease-emphasis: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  --icon-stroke: 2px;
+  --icon-corner: 0px;
+  --font-sans: "Space Grotesk", "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: "Orbitron", "Space Grotesk", "Poppins", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root[data-mode='dark'][data-theme='cyber-noir'] {
+  --background: 248 53% 12%;
+  --foreground: 220 60% 94%;
+  --primary: 284 86% 62%;
+  --primary-foreground: 248 53% 12%;
+  --secondary: 240 29% 20%;
+  --secondary-foreground: 220 60% 90%;
+  --accent: 175 100% 50%;
+  --accent-foreground: 248 53% 12%;
+  --muted: 248 30% 20%;
+  --muted-foreground: 220 30% 80%;
+  --border: 248 30% 32%;
+  --destructive: 347 87% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 160 84% 48%;
+  --success-foreground: 168 78% 10%;
+  --warning: 45 100% 58%;
+  --warning-foreground: 48 100% 12%;
+  --info: 200 100% 62%;
+  --info-foreground: 200 100% 10%;
+  --radius-lg: 1rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.3rem;
+  --button-radius: 999px;
+  --button-font-weight: 600;
+  --card-radius: 0.75rem;
+  --card-shadow: 0 45px 70px -30px rgba(2,0,12,0.75);
+  --control-height: 2.6rem;
+  --stack-gap: 1.1rem;
+  --section-gap: 2.75rem;
+  --motion-duration-fast: 90ms;
+  --motion-duration-base: 160ms;
+  --motion-duration-slow: 240ms;
+  --motion-ease: cubic-bezier(0.83, 0, 0.17, 1);
+  --motion-ease-emphasis: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  --icon-stroke: 2px;
+  --icon-corner: 0px;
+  --font-sans: "Space Grotesk", "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: "Orbitron", "Space Grotesk", "Poppins", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root[data-mode='light'][data-theme='luxury'] {
+  --background: 40 33% 98%;
+  --foreground: 277 28% 18%;
+  --primary: 277 55% 32%;
+  --primary-foreground: 43 100% 96%;
+  --secondary: 43 64% 90%;
+  --secondary-foreground: 277 28% 25%;
+  --accent: 43 74% 55%;
+  --accent-foreground: 277 28% 18%;
+  --muted: 43 30% 92%;
+  --muted-foreground: 277 20% 35%;
+  --border: 43 30% 82%;
+  --destructive: 355 65% 48%;
+  --destructive-foreground: 43 100% 98%;
+  --success: 151 30% 32%;
+  --success-foreground: 43 100% 94%;
+  --warning: 32 80% 50%;
+  --warning-foreground: 43 100% 96%;
+  --info: 210 70% 42%;
+  --info-foreground: 43 100% 98%;
+  --radius-lg: 1.25rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.375rem;
+  --button-radius: 999px;
+  --button-font-weight: 600;
+  --card-radius: 1rem;
+  --card-shadow: 0 35px 55px -28px rgba(90,70,20,0.35);
+  --control-height: 3rem;
+  --stack-gap: 1.4rem;
+  --section-gap: 3.75rem;
+  --motion-duration-fast: 140ms;
+  --motion-duration-base: 260ms;
+  --motion-duration-slow: 420ms;
+  --motion-ease: cubic-bezier(0.19, 1, 0.22, 1);
+  --motion-ease-emphasis: cubic-bezier(0.22, 1, 0.36, 1);
+  --icon-stroke: 1.4px;
+  --icon-corner: 10px;
+  --font-sans: "Manrope", "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: "Cormorant Garamond", "Playfair Display", serif;
+  --font-mono: "IBM Plex Mono", "Nimbus Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root[data-mode='dark'][data-theme='luxury'] {
+  --background: 277 28% 10%;
+  --foreground: 43 100% 92%;
+  --primary: 277 45% 55%;
+  --primary-foreground: 277 28% 10%;
+  --secondary: 277 28% 20%;
+  --secondary-foreground: 43 100% 92%;
+  --accent: 43 80% 55%;
+  --accent-foreground: 277 28% 10%;
+  --muted: 277 20% 18%;
+  --muted-foreground: 43 64% 82%;
+  --border: 277 22% 32%;
+  --destructive: 355 65% 56%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 151 32% 48%;
+  --success-foreground: 43 100% 12%;
+  --warning: 32 80% 58%;
+  --warning-foreground: 43 100% 12%;
+  --info: 210 70% 58%;
+  --info-foreground: 210 70% 12%;
+  --radius-lg: 1.75rem;
+  --radius-md: 1rem;
+  --radius-sm: 0.5rem;
+  --button-radius: 999px;
+  --button-font-weight: 600;
+  --card-radius: 1.5rem;
+  --card-shadow: 0 38px 65px -28px rgba(6,2,14,0.75);
+  --control-height: 3rem;
+  --stack-gap: 1.4rem;
+  --section-gap: 3.75rem;
+  --motion-duration-fast: 140ms;
+  --motion-duration-base: 260ms;
+  --motion-duration-slow: 420ms;
+  --motion-ease: cubic-bezier(0.19, 1, 0.22, 1);
+  --motion-ease-emphasis: cubic-bezier(0.22, 1, 0.36, 1);
+  --icon-stroke: 1.4px;
+  --icon-corner: 10px;
+  --font-sans: "Manrope", "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: "Cormorant Garamond", "Playfair Display", serif;
+  --font-mono: "IBM Plex Mono", "Nimbus Mono", ui-monospace, SFMono-Regular, monospace;
+}
