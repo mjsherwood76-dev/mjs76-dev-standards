@@ -81,7 +81,7 @@ Follow these guidelines:
 
 - Update token definitions in `design/ui-standards.md`
 - Update narrative guidance in `design/themes.md`
-- Apply changes to demo applications (`frontend/demo` and `frontend/demo-app`)
+- Apply changes to demo application (`frontend/demo-app`)
 - Test across **all 17 themes** and **light/dark modes**
 - Verify WCAG AA contrast ratios
 
