@@ -1066,38 +1066,82 @@ export function ThemeEasterEggs({ theme, mode, enabled = true }: ThemeEasterEggs
     };
 
     // ============================================================================
-    // THEME: EMBER (CULINARY) - Rising embers
+    // THEME: EMBER (CULINARY) - Rising flame particles
+    // Warm orange/yellow embers rising from bottom with wavering motion
+    // Particles fade and shrink as they rise with glow effect
     // ============================================================================
+    const numberOfEmberParticles = 150; // Reduced for better performance
+
     const initEmber = () => {
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < numberOfEmberParticles; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: canvas.height + Math.random() * 50,
-          speedY: 0.3 + Math.random() * 0.4,
-          speedX: (Math.random() - 0.5) * 0.2,
-          size: 3 + Math.random() * 5,
-          opacity: 0.2 + Math.random() * 0.25, // Increased visibility
-          dispersion: 0
+          radius: Math.random() * 6 + 3, // 3-9px (bigger)
+          initialRadius: 0,
+          speedY: Math.random() * 1.5 + 0.8, // 0.8-2.3px per frame
+          life: Math.random() * 350 + 250, // 250-600 frames (longer life = higher)
+          maxLife: 0,
+          hue: Math.random() * 30 + 10, // 10-40 (orange to yellow)
+          waver: Math.random() * 2 - 1,
+          waverSpeed: Math.random() * 0.05 + 0.01,
         });
+        
+        // Store initial values
+        particles[i].initialRadius = particles[i].radius;
+        particles[i].maxLife = particles[i].life;
       }
     };
 
     const animateEmber = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        const dispersionOpacity = p.opacity * (1 - p.dispersion);
-        ctx.fillStyle = `rgba(200, 150, 100, ${dispersionOpacity})`;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size * (1 + p.dispersion * 2), 0, Math.PI * 2);
-        ctx.fill();
+
+      particles.forEach((p) => {
+        // Update life
+        p.life--;
+        
+        // Move upward
         p.y -= p.speedY;
-        p.x += p.speedX;
-        p.dispersion += 0.005;
-        if (p.y < -20 || p.dispersion > 1) {
-          p.y = canvas.height + 20;
+        
+        // Wavering horizontal movement (like heat distortion)
+        p.waver += p.waverSpeed;
+        p.x += Math.sin(p.waver) * 1.0;
+        
+        // Shrink radius as particle ages
+        p.radius = p.initialRadius * (p.life / p.maxLife);
+        
+        // Reset if dead or too small
+        if (p.life <= 0 || p.radius <= 0.1) {
           p.x = Math.random() * canvas.width;
-          p.dispersion = 0;
+          p.y = canvas.height + Math.random() * 50;
+          p.radius = Math.random() * 6 + 3; // 3-9px (bigger)
+          p.initialRadius = p.radius;
+          p.speedY = Math.random() * 1.5 + 0.8;
+          p.life = Math.random() * 350 + 250; // 250-600 frames (longer life = higher)
+          p.maxLife = p.life;
+          p.hue = Math.random() * 30 + 10;
+          p.waver = Math.random() * 2 - 1;
+          p.waverSpeed = Math.random() * 0.05 + 0.01;
         }
+        
+        // Calculate opacity based on life
+        const opacity = (p.life / p.maxLife) * 0.7;
+        
+        // Mute colors for light mode (lower saturation and brightness)
+        const saturation = mode === 'dark' ? 100 : 70;
+        const lightness = mode === 'dark' ? 50 : 45;
+        
+        // Draw particle with glow
+        ctx.shadowColor = `hsl(${p.hue}, ${saturation}%, ${lightness}%)`;
+        ctx.shadowBlur = mode === 'dark' ? 15 : 10;
+        
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${p.hue}, ${saturation}%, ${lightness}%, ${opacity})`;
+        ctx.fill();
+        
+        // Reset shadow
+        ctx.shadowBlur = 0;
       });
     };
 
