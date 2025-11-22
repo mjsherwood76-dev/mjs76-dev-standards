@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { Heart, Pencil, Settings, Search, Folder, FolderOpen, MailOpen } from 'lucide-react';
+import { MatrixRain } from '../components/MatrixRain';
 
 const MODE_OPTIONS = [
   { value: 'light', label: 'Light' },
@@ -49,6 +50,7 @@ export default function Page() {
   const [mode, setMode] = useState<ModeValue>('light');
   const [theme, setTheme] = useState<ThemeValue>('default');
   const [density, setDensity] = useState<DensityValue>('comfortable');
+  const [easterEggEnabled, setEasterEggEnabled] = useState(true);
   const [tokens, setTokens] = useState<TokenMap>({});
 
   useEffect(() => {
@@ -62,7 +64,7 @@ export default function Page() {
   }, [theme]);
 
   useEffect(() => {
-    document.body.dataset.density = density;
+    document.documentElement.setAttribute('data-density', density);
   }, [density]);
 
   useEffect(() => {
@@ -79,8 +81,10 @@ export default function Page() {
   }, [theme]);
 
   return (
-    <main>
-      <section>
+    <>
+      <MatrixRain mode={mode} enabled={theme === 'cyber-noir' && easterEggEnabled} />
+      <main>
+        <section>
         <header>
           <h1>Developer Standards Showcase</h1>
           <p>
@@ -163,6 +167,29 @@ setTheme(savedTheme);`}
               ))}
             </div>
           </div>
+          {theme === 'cyber-noir' && (
+            <div className="control-group">
+              <strong>Easter Egg</strong>
+              <div className="button-row">
+                <button
+                  type="button"
+                  className="ghost"
+                  aria-pressed={easterEggEnabled}
+                  onClick={() => setEasterEggEnabled(true)}
+                >
+                  On
+                </button>
+                <button
+                  type="button"
+                  className="ghost"
+                  aria-pressed={!easterEggEnabled}
+                  onClick={() => setEasterEggEnabled(false)}
+                >
+                  Off
+                </button>
+              </div>
+            </div>
+          )}
           <div>
             <p id="theme-description">{themeDescription}</p>
             <small>Tokens below and every component on this page respond live to your selections.</small>
@@ -663,5 +690,6 @@ setTheme(savedTheme);`}
         </div>
       </section>
     </main>
+    </>
   );
 }

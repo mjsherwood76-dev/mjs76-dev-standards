@@ -2086,7 +2086,26 @@ blockquote cite {
   --warning-foreground: 0 0% 0%;
   --info: 220 100% 60%;
   --info-foreground: 0 0% 0%;
+  --radius-lg: 0.25rem;
+  --radius-md: 0.125rem;
+  --radius-sm: 0px;
+  --button-radius: 0.125rem;
+  --button-font-weight: 700;
+  --card-radius: 0.25rem;
   --card-shadow: 5px 5px 0 rgba(255, 255, 255, 0.2), 4px 4px 0 rgba(0, 0, 0, 0.8);
+  --control-height: 3rem;
+  --stack-gap: 1.5rem;
+  --section-gap: 4rem;
+  --motion-duration-fast: 80ms;
+  --motion-duration-base: 150ms;
+  --motion-duration-slow: 250ms;
+  --motion-ease: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --motion-ease-emphasis: cubic-bezier(0.87, 0, 0.13, 1);
+  --icon-stroke: 2.5px;
+  --icon-corner: 2px;
+  --font-sans: "Barlow", "Rajdhani", sans-serif;
+  --font-heading: "Bebas Neue", "Oswald", sans-serif;
+  --font-mono: "Share Tech Mono", monospace;
 }
 
 /* Valor - Championship Theme */
@@ -2832,4 +2851,12 @@ blockquote cite {
   --info: 200 85% 62%;
   --info-foreground: 200 85% 12%;
   --card-shadow: 0 32px 54px -26px rgba(8, 20, 15, 0.68);
+}
+
+
+
+/* Ensure content stays above matrix rain */
+:root[data-theme='cyber-noir'] body > * {
+  position: relative;
+  z-index: 1;
 }
