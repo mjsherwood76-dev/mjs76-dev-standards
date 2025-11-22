@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { Heart, Pencil, Settings, Search, Folder, FolderOpen, MailOpen } from 'lucide-react';
-import { MatrixRain } from '../components/MatrixRain';
+import { ThemeEasterEggs } from '../components/ThemeEasterEggs';
 
 const MODE_OPTIONS = [
   { value: 'light', label: 'Light' },
@@ -82,7 +82,7 @@ export default function Page() {
 
   return (
     <>
-      <MatrixRain mode={mode} enabled={theme === 'cyber-noir' && easterEggEnabled} />
+      <ThemeEasterEggs theme={theme} mode={mode} enabled={easterEggEnabled} />
       <main>
         <section>
         <header>
@@ -167,10 +167,9 @@ setTheme(savedTheme);`}
               ))}
             </div>
           </div>
-          {theme === 'cyber-noir' && (
-            <div className="control-group">
-              <strong>Easter Egg</strong>
-              <div className="button-row">
+          <div className="control-group">
+            <strong>Easter Egg</strong>
+            <div className="button-row">
                 <button
                   type="button"
                   className="ghost"
@@ -189,7 +188,6 @@ setTheme(savedTheme);`}
                 </button>
               </div>
             </div>
-          )}
           <div>
             <p id="theme-description">{themeDescription}</p>
             <small>Tokens below and every component on this page respond live to your selections.</small>
